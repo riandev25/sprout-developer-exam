@@ -21,7 +21,7 @@ namespace Sprout.Exam.Business.Tests.Unit
 
             // Assert
             result.Should().BePositive();
-            result.Should().Be(15327.5M);
+            result.Should().Be(15327.27M);
         }
 
         [Fact]

@@ -11,8 +11,8 @@ namespace Sprout.Exam.Business.Factory.SalaryCalculatorFactory
             decimal absentSalaryDeduction = baseSalary / 22 * absentDays;
             decimal taxSalaryDeduction = baseSalary * tax;
             decimal salary = baseSalary - absentSalaryDeduction - taxSalaryDeduction;
-
-            return Math.Round(salary, 2);
+            salary = decimal.Round(salary, 2, MidpointRounding.AwayFromZero);
+            return salary;
         }
     }
 }
