@@ -31,7 +31,7 @@ Restore database using the SproutDbExamUpdated.bak
 - Update to latest version of .NET
 - Update react to latest and use vite + react
 - Update dependencies
-- Strongly implement separation of concerns (use CQRS design pattern, etc)
+- Strongly implement separation of concerns (use CQRS design pattern, group services in the dependency injection, etc)
 - Add tests for client and server (unit test, integration tests, e2e tests)
 - Add CI/CD pipeline
 
