@@ -6,7 +6,7 @@ export class EmployeeCalculate extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { id: 0,fullName: '',birthdate: '',tin: '',typeId: 1,absentDays: 0,workedDays: 0,netIncome: 0, loading: true,loadingCalculate:false };
+    this.state = { id: 0,fullName: '',birthdate: '',tin: '',typeId: 1,absentDays: 0,workedDays: 0,netIncome: '0', loading: true,loadingCalculate:false };
   }
 
   componentDidMount() {
@@ -72,11 +72,11 @@ export class EmployeeCalculate extends Component {
 { this.state.typeId === 1? 
 <div className='form-group col-md-6'>
   <label htmlFor='inputAbsentDays4'>Absent Days: </label>
-  <input type='text' className='form-control' id='inputAbsentDays4' onChange={this.handleChange.bind(this)} value={this.state.absentDays} name="absentDays" placeholder='Absent Days' />
+  <input type='number' className='form-control' id='inputAbsentDays4' onChange={this.handleChange.bind(this)} value={this.state.absentDays} name="absentDays" placeholder='Absent Days' />
 </div> :
 <div className='form-group col-md-6'>
   <label htmlFor='inputWorkDays4'>Worked Days: </label>
-  <input type='text' className='form-control' id='inputWorkDays4' onChange={this.handleChange.bind(this)} value={this.state.workedDays} name="workedDays" placeholder='Worked Days' />
+  <input type='number' className='form-control' id='inputWorkDays4' onChange={this.handleChange.bind(this)} value={this.state.workedDays} name="workedDays" placeholder='Worked Days' />
 </div>
 }
 </div>
@@ -112,7 +112,8 @@ export class EmployeeCalculate extends Component {
     };
     const response = await fetch('api/employees/' + this.state.id + '/calculate',requestOptions);
     const data = await response.json();
-    this.setState({ loadingCalculate: false,netIncome: data });
+    console.log(Number.parseFloat(data).toFixed(2))
+    this.setState({ loadingCalculate: false, netIncome: Number.parseFloat(data).toFixed(2) });
   }
 
   async getEmployee(id) {
@@ -121,6 +122,7 @@ export class EmployeeCalculate extends Component {
     const response = await fetch('api/employees/' + id, {
       headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
     });
+    
 
     if(response.status === 200){
         const data = await response.json();

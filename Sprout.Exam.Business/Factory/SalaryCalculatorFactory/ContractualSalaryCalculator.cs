@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Sprout.Exam.Business.Factory.SalaryCalculatorFactory
 {
     public class ContractualSalaryCalculator : ISalaryCalculator
     {
-        public decimal CalculateSalary(decimal absentDays = 0, decimal workedDays = 0)
+        private const decimal RatePerDay = 500m;
+
+        public decimal CalculateSalary(decimal absentDays, decimal workedDays)
         {
-            int ratePerDay = 500;
-            decimal salary = ratePerDay * workedDays;
-            return salary;
+            decimal salary = RatePerDay * workedDays;
+            return Math.Round(salary, 2, MidpointRounding.AwayFromZero);
         }
     }
 }

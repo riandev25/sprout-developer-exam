@@ -135,7 +135,7 @@ namespace Sprout.Exam.WebApp.Controllers
                 var salaryCalculatorFactory = SalaryCalculatorFactory.CreateSalaryCalculator(employeeType);
 
                 var salary = salaryCalculatorFactory.CalculateSalary(input.AbsentDays, input.WorkedDays);
-                return Created($"/api/employees/{employee.Id}/calculate", salary);
+                return Created($"/api/employees/{employee.Id}/calculate", salary.ToString());
             }
             catch (Exception ex)
             {

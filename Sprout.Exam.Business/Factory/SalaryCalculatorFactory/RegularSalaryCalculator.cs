@@ -5,14 +5,14 @@ namespace Sprout.Exam.Business.Factory.SalaryCalculatorFactory
     {
         public decimal CalculateSalary(decimal absentDays, decimal workedDays)
         {
-            int baseSalary = 20000;
+            decimal baseSalary = 20000M;
             decimal tax = 0.12m;
 
             decimal absentSalaryDeduction = baseSalary / 22 * absentDays;
             decimal taxSalaryDeduction = baseSalary * tax;
             decimal salary = baseSalary - absentSalaryDeduction - taxSalaryDeduction;
 
-            return salary;
+            return Math.Round(salary, 2);
         }
     }
 }
