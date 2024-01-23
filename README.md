@@ -8,7 +8,7 @@ This project runs on .NET 5 SDK
 
 ## Configurations
 
-Change the value of the default connection depending on your setup and local environment.
+Change the value of the default connection depending on your setup and local environment
 ``` bash
 {
   "ConnectionStrings": {
@@ -16,7 +16,14 @@ Change the value of the default connection depending on your setup and local env
   },
 }
 ```
-Restore database using the SproutDbExamUpdated.bak
+
+Install dependencies on the client
+``` bash
+cd Sprout.Exam.WebApp/ClientApp
+npm install
+```
+
+Restore updated database using the SproutDbExamUpdated.bak
 
 ## Task Accomplished
 
