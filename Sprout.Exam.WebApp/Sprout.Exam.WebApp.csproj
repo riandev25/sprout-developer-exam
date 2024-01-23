@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sprout.Exam.Business.Tests.Unit\Sprout.Exam.Business.Tests.Unit.csproj" />
+    <ProjectReference Include="..\Sprout.Exam.Business\Sprout.Exam.Business.csproj" />
   </ItemGroup>
 
   <ItemGroup>
