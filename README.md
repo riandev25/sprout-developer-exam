@@ -28,9 +28,9 @@ Restore database using the SproutDbExamUpdated.bak
 
 ## Improvements needed to deploy to production
 
-- Update to latest version of .NET
+- Update to the latest version of .NET
 - Update react class to functional components and use vite + react for faster development server
-- Update dependencies
+- Update nuget and npm packages
 - Strongly implement separation of concerns (use CQRS design pattern, group services in the dependency injection, etc)
 - Add applicable tests for client and server (unit test, integration tests and e2e tests)
 - Add CI/CD pipeline
